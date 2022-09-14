@@ -1,21 +1,16 @@
 #include "main.h"
 /**
  * print_last_digit - Entry point
- *  @n: the int to extract
- *  Return: 0 success
+ * @n: The number in question
+ * Return: Value of last digit - int
  */
 int print_last_digit(int n)
 {
-	int a;
+	int me = n % 10;
 
-	if (n < 0)
-		n = -n;
-	a = n % 10;
+	if (me < 0)
+		me *= -1;
+	_putchar(me + '0');
 
-	if a < 0;
-	a = -a;
-
-	_putchar(a + '0');
-
-	return (a);
+	return (me);
 }
