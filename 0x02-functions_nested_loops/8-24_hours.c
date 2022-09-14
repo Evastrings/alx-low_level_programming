@@ -1,22 +1,27 @@
 #include "main.h"
 /**
  * jack_bauer - Entry point
- * Ruturn: Jack bauer
+ * Return: 0
  */
 void jack_bauer(void)
 {
 	int h, m;
 
-	for (h = 0; h <= 23; h++)
+	h = 0;
+
+	while (h < 24)
 	{
-	for (m = 0; m <= 59; m++)
+		m = 0;
+		while (m < 60)
 		{
-_putchar((h / 10) + '0');
-_putchar((h % 10) + '0');
-_putchar(':');
-_putchar((m / 10) + '0');
-_putchar((m % 10) + '0');
-_putchar('\n');
+			_putchar((h / 10) + '0');
+			_putchar((h % 10) + '0');
+			_putchar(':');
+			_putchar((m / 10) + '0');
+			_putchar((m % 10) + '0');
+			_putchar('\n');
+			m++;
 		}
+		h++;
 	}
 }
