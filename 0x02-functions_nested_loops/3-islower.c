@@ -1,9 +1,10 @@
 #include "main.h"
 /**
  * _islower - Entry point
- * *Return: Success
+ * @c: description
+ * Return: 0 success
  */
 int _islower(int c)
 {
-	return (c >= 'a' && c <= 'z');
+return (c >= 'a' && c <= 'z');
 }
