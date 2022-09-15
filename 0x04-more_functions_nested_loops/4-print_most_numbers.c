@@ -11,5 +11,5 @@ void print_most_numbers(void)
 		if (ev != 2 && ev != 4)
 			_putchar((ev % 10) + '0');
 	}
-	_putchar('\n')
+	_putchar('\n');
 }
