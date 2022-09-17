@@ -1,4 +1,4 @@
-#include "msin.h"
+#include "main.h"
 /**
  * main - Test if positive or negative
  * Return: 0 success
