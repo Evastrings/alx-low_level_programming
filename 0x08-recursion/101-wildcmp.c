@@ -1,41 +1,23 @@
 #include "main.h"
 
 /**
- * _strlen_recursion - function that return the length of a string
- * @s: the string
- * Return: length of s
+ * wildcmp - function that compares two strings
+ * @s1: first string
+ * @s2: second string that can cointain * which replace any string
+ * Return: 1 if matching 0 ortherwise
  */
-
-int _strlen_recursion(char *s)
+int wildcmp(char *s1, char *s2)
 {
-	if (*s == '\0')
-		return (0);
-	else
-		return (1 + _strlen_recursion(s + 1));
-}
-/**
- * palcheck - checker
- * @x: iterration
- * @y: length of s
- * @s: string
- * Return: 1 or 0
- */
-int palcheck(int x, int y, char *s)
-{
-	if (x >= y)
+	if (*s1 == '\0' && *s2 == '\0')
 		return (1);
-	if (*(s + x) != *(s + y - x))
-		return (0);
-	return (palcheck(x + 1, y, s));
-}
-/**
- * is_palindrome - check if a string is a palindrome
- * @s: string
- * Return: 1 if s is a palindrome otherwise 0
- */
-int is_palindrome(char *s)
-{
-	int i = _strlen_recursion(s);
-
-	return (palcheck(0, i - 1, s));
+	if (*s1 == *s2)
+		return (wildcmp(s1 + 1, s2 + 1));
+	if (*s2 == '*')
+	{
+		if (*s2 == '*' && *(s2 + 1) != '\0' && *s1 == '\0')
+			return (0);
+		if (wildcmp(s1, s2 + 1) || wildcmp(s1 + 1, s2))
+			return (1);
+	}
+	return (0);
 }
